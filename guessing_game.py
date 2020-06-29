@@ -58,13 +58,14 @@ def play_round():
     
     # Compare the input to random number
     if guess == rand_num:
+      print("\nCorrect! its {}".format(rand_num))
       print("You got the answer correct on guess number {}".format(score))
       break
     elif guess > rand_num:
-      print("Guess {}: That was too High".format(score))
+      print("Guess {}: It's Lower".format(score))
       continue
     elif guess < rand_num:
-      print("Guess {}: That was too Low".format(score))
+      print("Guess {}: It's Higher".format(score))
       continue
 
   return score
@@ -75,7 +76,6 @@ def start_game():
 
   #Generate Title
   title = "Number guessing game by Sccroix"
-  print("-" * len(title))
   print(title)
   print("-" * len(title))
 
@@ -97,7 +97,6 @@ def start_game():
       print("You didn't beat the high score")
     
 
-
     # Prompt if player wants to play again 
     def play_again():
       play = input("Do you want to play again (y/n)")
@@ -116,7 +115,7 @@ def start_game():
       break
 
   # End the game and say Good bye
-  print("Thank you for playing")
+  print("\nThank you for playing")
   print("The final highscore was {}".format(highscore))
 
 
