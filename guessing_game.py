@@ -32,13 +32,7 @@ def start_game():
   # write your code inside this function.
   #
 
-  # Generate title
-  TITLE = "Number guessing game by Sccroix"
-  print("-" * len(TITLE))
-  print(TITLE)
-  print("-" * len(TITLE))
 
-  highscore = 0
 
   #Start a Round of Guessing
   def play_round():
@@ -54,35 +48,59 @@ def start_game():
       try:
         guess = int(guess)
       except:
-        print("That was not a number")
+        print("Please enter your number as an integer (1-10)")
         continue
       
       num_guesses += 1
 
-      print("this is guess number {}".format(num_guesses))
       if guess == rand_num:
-        print("Correct")
+        print("You got the answer correct on guess number {}".format(num_guesses))
         break
-      else:
-        print("That was wrong. Try again")
+      elif guess > rand_num:
+        print("Guess number {}: That was too High".format(num_guesses))
+        continue
+      elif guess < rand_num:
+        print("Guess number {}: That was too Low".format(num_guesses))
         continue
 
-
-
-    #Ask player to guess Number
-
-    #Compare Number to actual
-      
-      # If Greater say so
-
-      # If Lower say so
-
-      # If correct respond with number of trys
+    return num_guesses
 
 
 
-  #This is the main loop of the game
-  play_round()
+
+
+
+  # This is the main loop of the game
+  # Generate title
+  title = "Number guessing game by Sccroix"
+  print("-" * len(title))
+  print(title)
+  print("-" * len(title))
+
+  highscore = 0
+
+  while True:
+    score = play_round()
+
+    if highscore == 0:
+      highscore = score
+      print("you just set the highscore at {} guesses".format(highscore))
+    elif score < highscore:
+      highscore = score
+      print("you just set the highscore at {} guesses".format(highscore))
+    else:
+      print("you didn't beat the high score")
+    
+    continue_playing = input("Do you want to continue playing (y/n): ")
+    if continue_playing == "y":
+      continue
+    elif continue_playing == "n":
+      break
+
+
+
+
+  print("The final highscore was {}".format(highscore))
 
 
 # Kick off the program by calling the start_game function.
