@@ -42,8 +42,32 @@ def start_game():
 
   #Start a Round of Guessing
   def play_round():
+    num_guesses = 0
 
     #Generate a random number between 1 - 10
+    rand_num = random.randint(1,10)
+    print("The random number is {}".format(rand_num))
+
+    while True:
+      guess = input("Guess a number between 1 and 10: ")
+
+      try:
+        guess = int(guess)
+      except:
+        print("That was not a number")
+        continue
+      
+      num_guesses += 1
+
+      print("this is guess number {}".format(num_guesses))
+      if guess == rand_num:
+        print("Correct")
+        break
+      else:
+        print("That was wrong. Try again")
+        continue
+
+
 
     #Ask player to guess Number
 
@@ -57,8 +81,8 @@ def start_game():
 
 
 
-#This is the main loop of the game
-play_round()
+  #This is the main loop of the game
+  play_round()
 
 
 # Kick off the program by calling the start_game function.
