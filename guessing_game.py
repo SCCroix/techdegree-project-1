@@ -31,10 +31,34 @@ def start_game():
   """
   # write your code inside this function.
   #
+
+  # Generate title
   TITLE = "Number guessing game by Sccroix"
   print("-" * len(TITLE))
   print(TITLE)
   print("-" * len(TITLE))
+
+  highscore = 0
+
+  #Start a Round of Guessing
+  def play_round():
+
+    #Generate a random number between 1 - 10
+
+    #Ask player to guess Number
+
+    #Compare Number to actual
+      
+      # If Greater say so
+
+      # If Lower say so
+
+      # If correct respond with number of trys
+
+
+
+#This is the main loop of the game
+play_round()
 
 
 # Kick off the program by calling the start_game function.
